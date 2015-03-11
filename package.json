@@ -1,0 +1,35 @@
+{
+  "name": "array-generators",
+  "version": "1.0.0",
+  "description": "Array functions (forEach, filter, map) with support for generator functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --harmony test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vdemedes/array-generators.git"
+  },
+  "keywords": [
+    "foreach",
+    "filter",
+    "map",
+    "es6",
+    "generator"
+  ],
+  "author": "Vadim Demedes <vdemedes@gmail.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/vdemedes/array-generators/issues"
+  },
+  "homepage": "https://github.com/vdemedes/array-generators",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "co": "^4.4.0",
+    "mocha": "^2.2.1",
+    "mocha-generators": "^1.0.0"
+  },
+  "dependencies": {
+    "koa-compose": "^2.3.0"
+  }
+}
