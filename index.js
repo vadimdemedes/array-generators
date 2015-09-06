@@ -32,15 +32,8 @@ exports.map = map;
  * @param {Object) context - optional context for iterator function
  */
 
-function * forEach (arr, fn, context) {
-  var fns = arr.map(function (item, index) {
-    return function * (next) {
-      yield fn.call(context, item, index);
-      yield next;
-    };
-  });
-  
-  yield compose(fns);
+function forEach (arr, fn, context) {
+  return map.apply(null, arguments);
 }
 
 
