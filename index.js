@@ -50,19 +50,15 @@ function forEach (arr, fn, context) {
 
 function * filter (arr, fn, context) {
   var result = [];
-  
-  var fns = arr.map(function (item, index) {
-    return function * (next) {
-      var isValid = yield fn.call(context, item, index);
-      
-      if (isValid) result.push(item);
-      
-      yield next;
+
+  var results = yield map(arr, fn, context);
+
+  results.forEach(function (item, index) {
+    if (item) {
+      result.push(arr[index]);
     }
   });
-  
-  yield compose(fns);
-  
+
   return result;
 }
 
