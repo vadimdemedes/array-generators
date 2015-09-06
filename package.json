@@ -24,12 +24,9 @@
   },
   "homepage": "https://github.com/vdemedes/array-generators",
   "devDependencies": {
-    "chai": "^2.1.1",
-    "co": "^4.4.0",
+    "ava": "^0.1.0",
     "co-sleep": "0.0.1",
-    "make-lint": "vdemedes/make-lint",
-    "mocha": "^2.2.1",
-    "mocha-generators": "^1.1.1"
+    "make-lint": "vdemedes/make-lint"
   },
   "dependencies": {
     "co": "^4.6.0"

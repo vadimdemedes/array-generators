@@ -4,6 +4,6 @@ default:
 	@echo "No default task"
 
 test:
-	@./node_modules/.bin/mocha
+	@node test
 
 include node_modules/make-lint/index.mk
