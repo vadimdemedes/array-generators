@@ -56,4 +56,4 @@ $ npm test
 
 ### License
 
-WTFPL – Do What the Fuck You Want to Public License
+MIT © [Vadym Demedes](http://vadimdemedes.com)
