@@ -4,7 +4,7 @@
  * Dependencies
  */
 
-var co = require('co');
+const co = require('co');
 
 
 /**
@@ -48,7 +48,7 @@ function forEach (arr, fn, context) {
  */
 
 function * forEachSeries (arr, fn, context) {
-  var i = -1;
+  let i = -1;
 
   while (arr[++i]) {
     yield fn.call(context, arr[i], i);
@@ -68,12 +68,13 @@ function * forEachSeries (arr, fn, context) {
  */
 
 function * filter (arr, fn, context) {
-  var result = [];
+  let result = [];
 
-  var results = yield map(arr, fn, context);
+  // test results
+  let results = yield map(arr, fn, context);
 
-  results.forEach(function (item, index) {
-    if (item) {
+  results.forEach(function (isValid, index) {
+    if (isValid) {
       result.push(arr[index]);
     }
   });

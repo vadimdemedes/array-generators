@@ -4,13 +4,13 @@
  * Dependencies
  */
 
-var sleep = require('co-sleep');
-var array = require('./');
+const sleep = require('co-sleep');
+const array = require('./');
 
-var forEachSeries = array.forEachSeries;
-var forEach = array.forEach;
-var filter = array.filter;
-var map = array.map;
+const forEachSeries = array.forEachSeries;
+const forEach = array.forEach;
+const filter = array.filter;
+const map = array.map;
 
 require('mocha-generators')();
 require('chai').should();
@@ -22,12 +22,12 @@ require('chai').should();
 
 describe ('array-generators', function () {
   it ('forEach', function * () {
-    var arr = [1, 2, 3];
-    var context = { key: 'value' };
+    let arr = [1, 2, 3];
+    let context = { key: 'value' };
     
-    var t = [];
-    var n = 1;
-    var i = 0;
+    let t = [];
+    let n = 1;
+    let i = 0;
     
     yield forEach(arr, function * (item, index) {
       this.should.equal(context);
@@ -49,12 +49,12 @@ describe ('array-generators', function () {
   });
 
   it ('forEachSeries', function * () {
-    var arr = [1, 2, 3];
-    var context = { key: 'value' };
+    let arr = [1, 2, 3];
+    let context = { key: 'value' };
 
-    var t = [];
-    var n = 1;
-    var i = 0;
+    let t = [];
+    let n = 1;
+    let i = 0;
 
     yield forEachSeries(arr, function * (item, index) {
       this.should.equal(context);
@@ -70,14 +70,14 @@ describe ('array-generators', function () {
   });
   
   it ('filter', function * () {
-    var arr = [1, 2, 3];
-    var context = { key: 'value' };
+    let arr = [1, 2, 3];
+    let context = { key: 'value' };
     
-    var t = 0;
-    var n = 1;
-    var i = 0;
+    let t = 0;
+    let n = 1;
+    let i = 0;
     
-    var result = yield filter(arr, function * (item, index) {
+    let result = yield filter(arr, function * (item, index) {
       this.should.equal(context);
       item.should.equal(n++);
       index.should.equal(i++);
@@ -92,14 +92,14 @@ describe ('array-generators', function () {
   });
   
   it ('map', function * () {
-    var arr = [1, 2, 3];
-    var context = { key: 'value' };
+    let arr = [1, 2, 3];
+    let context = { key: 'value' };
     
-    var t = 0;
-    var n = 1;
-    var i = 0;
+    let t = 0;
+    let n = 1;
+    let i = 0;
     
-    var result = yield map(arr, function * (item, index) {
+    let result = yield map(arr, function * (item, index) {
       this.should.equal(context);
       item.should.equal(n++);
       index.should.equal(i++);
