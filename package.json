@@ -4,7 +4,7 @@
   "description": "Array functions (forEach, filter, map) with support for generator functions",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --harmony test.js"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
