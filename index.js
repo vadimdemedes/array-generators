@@ -32,7 +32,7 @@ exports.map = map;
  * @param {Object) context - optional context for iterator function
  */
 
-function forEach (arr, fn, context) {
+function forEach () {
   return map.apply(null, arguments);
 }
 
