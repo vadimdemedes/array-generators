@@ -30,7 +30,6 @@
     "mocha-generators": "^1.0.0"
   },
   "dependencies": {
-    "co": "^4.6.0",
-    "koa-compose": "^2.3.0"
+    "co": "^4.6.0"
   }
 }

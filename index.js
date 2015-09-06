@@ -4,7 +4,6 @@
  * Dependencies
  */
 
-var compose = require('koa-compose');
 var co = require('co');
 
 
