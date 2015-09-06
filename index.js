@@ -5,6 +5,7 @@
  */
 
 var compose = require('koa-compose');
+var co = require('co');
 
 
 /**
@@ -84,20 +85,8 @@ function * filter (arr, fn, context) {
  * @param {Object) context - optional context for iterator function
  */
 
-function * map (arr, fn, context) {
-  var result = [];
-  
-  var fns = arr.map(function (item, index) {
-    return function * (next) {
-      var modifiedItem = yield fn.call(context, item, index);
-      
-      result.push(modifiedItem);
-      
-      yield next;
-    }
+function map (arr, fn, context) {
+  return arr.map(function (item, index) {
+    return co(fn.call(context, item, index));
   });
-  
-  yield compose(fns);
-  
-  return result;
 }
