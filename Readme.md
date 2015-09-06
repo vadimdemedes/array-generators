@@ -1,6 +1,7 @@
-# array-generators
+# array-generators [![Circle CI](https://circleci.com/gh/vdemedes/array-generators.svg?style=svg)](https://circleci.com/gh/vdemedes/array-generators)
 
 Array methods (forEach, forEachSeries, map, filter) with support for generator functions.
+
 
 ### Installation
 
@@ -8,9 +9,10 @@ Array methods (forEach, forEachSeries, map, filter) with support for generator f
 $ npm install array-generators --save
 ```
 
+
 ### Usage
 
-```javascript
+```js
 let array = require('array-generators');
 
 let forEach = array.forEach;
@@ -44,15 +46,15 @@ let result = yield map(arr, function * (item, index) {
 });
 ```
 
+
 ### Tests
 
 [![Circle CI](https://circleci.com/gh/vdemedes/array-generators.svg?style=svg)](https://circleci.com/gh/vdemedes/array-generators)
 
-Run tests using:
-
 ```
 $ npm test
 ```
+
 
 ### License
 
