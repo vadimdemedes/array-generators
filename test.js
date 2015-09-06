@@ -7,6 +7,7 @@
 var sleep = require('co-sleep');
 var array = require('./');
 
+var forEachSeries = array.forEachSeries;
 var forEach = array.forEach;
 var filter = array.filter;
 var map = array.map;
@@ -45,6 +46,27 @@ describe ('array-generators', function () {
     arr.indexOf(t[0]).should.be.above(-1);
     t.splice(0, 1);
     arr.indexOf(t[0]).should.be.above(-1);
+  });
+
+  it ('forEachSeries', function * () {
+    var arr = [1, 2, 3];
+    var context = { key: 'value' };
+
+    var t = [];
+    var n = 1;
+    var i = 0;
+
+    yield forEachSeries(arr, function * (item, index) {
+      this.should.equal(context);
+      item.should.equal(n++);
+      index.should.equal(i++);
+
+      yield sleep(Math.random() * 500);
+
+      t.push(item);
+    }, context);
+
+    t.should.deep.equal(arr);
   });
   
   it ('filter', function * () {
