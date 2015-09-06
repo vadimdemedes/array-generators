@@ -20,12 +20,17 @@ var map = array.map;
 var arr = ['first', 'second', 'third'];
 
 
-/* forEach */
+/* forEach (async) */
 yield forEach(arr, function * (item, index) {
 	// item is value, e.g. 'first'
 	// index is, well, index, e.g. 0
 });
 
+
+/* forEachSeries (serially) */
+yield forEachSeries(arr, function * (item, index) {
+  // same as forEach()
+});
 
 /* filter */
 var result = yield filter(arr, function * (item, index) {
