@@ -4,6 +4,7 @@
  * Dependencies
  */
 
+var sleep = require('co-sleep');
 var array = require('./');
 
 var forEach = array.forEach;
@@ -23,7 +24,7 @@ describe ('array-generators', function () {
     var arr = [1, 2, 3];
     var context = { key: 'value' };
     
-    var t = 0;
+    var t = [];
     var n = 1;
     var i = 0;
     
@@ -31,10 +32,19 @@ describe ('array-generators', function () {
       this.should.equal(context);
       item.should.equal(n++);
       index.should.equal(i++);
-      t++;
+
+      yield sleep(Math.random() * 500);
+
+      t.push(item);
     }, context);
     
-    t.should.equal(3);
+    t.length.should.equal(3);
+
+    arr.indexOf(t[0]).should.be.above(-1);
+    t.splice(0, 1);
+    arr.indexOf(t[0]).should.be.above(-1);
+    t.splice(0, 1);
+    arr.indexOf(t[0]).should.be.above(-1);
   });
   
   it ('filter', function * () {
