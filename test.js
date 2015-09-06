@@ -12,7 +12,7 @@ const forEach = array.forEach;
 const filter = array.filter;
 const map = array.map;
 
-require('mocha-generators')();
+require('mocha-generators').install();
 require('chai').should();
 
 
