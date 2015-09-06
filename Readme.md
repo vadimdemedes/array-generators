@@ -52,7 +52,7 @@ let result = yield map(arr, function * (item, index) {
 [![Circle CI](https://circleci.com/gh/vdemedes/array-generators.svg?style=svg)](https://circleci.com/gh/vdemedes/array-generators)
 
 ```
-$ npm test
+$ make test
 ```
 
 
